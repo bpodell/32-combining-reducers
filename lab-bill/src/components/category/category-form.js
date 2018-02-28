@@ -23,11 +23,11 @@ class CategoryForm extends React.Component {
     e.preventDefault()
     if (this.props.buttonText === 'create') this.props.onComplete(this.state)
     if (this.props.buttonText === 'update') this.props.update(this.state);
-    // this.setState({
-    //   name: '',
-    //   budget: '',
+    this.setState({
+      name: '',
+      budget: '',
 
-    // })
+    })
   }
 
   render() {

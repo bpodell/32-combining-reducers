@@ -7,7 +7,7 @@ import CategoryItem from '../category/category-item'
 class Dashboard extends React.Component {
   render() {
     return (
-      <section>
+      <section className="dashboard">
         <h1>Expenses</h1>
 
         <CategoryForm
