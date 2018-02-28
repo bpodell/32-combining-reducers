@@ -3,23 +3,12 @@ import React from 'react'
 class ExpenseForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state = 
-    this.props.expense 
-    ? {
-      name: this.props.expense.name,
-      price: this.props.expense.price,
-      categoryId: this.props.expense.categoryId,
-      catId: this.props.expense.catId,
-      _id: this.props.expense._id,
-      timestamp: this.props.expense.timestamp,
-    }
-    :
-      {
-        name: '',
-        price: '',
-        catId: this.props.categoryId,
+    this.state = this.props.expense
+      ? this.props.expense
+      : {
+        categoryId: this.props.categoryId,
+        title: '',
       }
-
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
