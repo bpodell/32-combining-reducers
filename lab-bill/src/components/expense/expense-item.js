@@ -17,7 +17,7 @@ class ExpenseItem extends React.Component{
 
   handleClick(event){
     event.preventDefault();
-    this.props.destroy(this.props.category);
+    this.props.ExpenseDestroy(this.props.expense);
   }
 
   handleChangeState(){
@@ -37,7 +37,7 @@ class ExpenseItem extends React.Component{
         <li>
           <h2>{this.props.expense.name}</h2>
           <p>{this.props.expense.price}</p>
-          <button type='submit' onClick={this.props.ExpenseDestroy}> delete </button>
+          <button type='submit' onClick={this.handleClick}> delete </button>
           <ExpenseForm buttonText='update expense' update={this.props.ExpenseUpdate} destroy ={this.props.ExpenseDestroy} expense={this.props.expense}/>
         </li>
     );
@@ -48,7 +48,7 @@ class ExpenseItem extends React.Component{
 let mapStateToProps = () => ({})
 let mapDispatchToProps = (dispatch, getState) => ({
   ExpenseUpdate: expense => dispatch(expenseUpdate(expense)),
-  ExpenseDestroy: expense => dispatch(expenseDelete(expense)),
+  ExpenseDestroy: expense => dispatch(expenseDestroy(expense)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ExpenseItem)
