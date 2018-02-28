@@ -36,7 +36,7 @@ class ExpenseItem extends React.Component{
           <h2>{this.props.expense.name}</h2>
           <p>{this.props.expense.price}</p>
           <button type='submit' onClick={this.props.categoryItemExpenseDestroy}> delete </button>
-          <ExpenseForm buttonText='update expense' onComplete={this.props.categoryItemExpenseUpdate} expense={this.props.expenses}/>
+          <ExpenseForm buttonText='update expense' update={this.props.update} destroy ={this.props.destroy} expense={this.props.expense} categoryId={this.props.categoryId}/>
         </li>
     );
   }

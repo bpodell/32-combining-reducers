@@ -12,13 +12,13 @@ export const expenseCreate = expense => {
 }
 
 export const expenseUpdate = expense => ({
-  type: 'expense_UPDATE',
+  type: 'EXPENSE_UPDATE',
   payload: expense,
 })
 
 export const expenseDestroy = expense => ({
-  type: 'expense_DESTROY',
+  type: 'EXPENSE_DESTROY',
   payload: expense,
 })
 
-export const expenseReset = () => ({type: 'expense_RESET'})
+export const expenseReset = () => ({type: 'EXPENSE_RESET'})

@@ -35,17 +35,18 @@ class CategoryItem extends React.Component{
   }
 
   render(){
-    console.log(this.props[this.props.category._id]);
+    console.log('this.props category-item',this.props);
+    console.log('this.props.expenses',this.props.expenses)
     return(
         <li>
           <h2>{this.props.category.name}</h2>
           <p>{this.props.category.budget}</p>
           <button type='submit' onClick={this.handleClick}> delete </button>
           <CategoryForm buttonText='update' update={this.props.update} category={this.props.category}/>
-          <ExpenseForm buttonText='add new expense' onComplete={this.props.categoryItemExpenseCreate} expense={this.props.expenses} categoryId={this.props.category._id}/>
+          <ExpenseForm buttonText='add new expense' onComplete={this.props.categoryItemExpenseCreate} expenseState={this.props.expenses} categoryId={this.props.category._id}/>
           {this.props.expenses[this.props.category._id] ?
           this.props.expenses[this.props.category._id].map(expense =>
-            <ExpenseItem expense={expense} update={this.props.dashboardCategoryUpdate} destroy={this.props.dashboardCategoryDestroy}/>
+            <ExpenseItem categoryId={this.props.category._id} expense={expense} update={this.props.categoryItemExpenseUpdate} destroy={this.props.categoryItemExpenseDestroy}/>
           )
           :
           undefined
